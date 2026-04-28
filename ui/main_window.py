@@ -43,9 +43,7 @@ class MainWindow(QMainWindow):
         self._build_ui()
         self._refresh()
 
-    # ══════════════════════════════════════════════════════════════
     #  MENU BAR
-    # ══════════════════════════════════════════════════════════════
     def _build_menu(self):
         bar = self.menuBar()
 
@@ -76,9 +74,7 @@ class MainWindow(QMainWindow):
         act_about.triggered.connect(self._show_about)
         m_about.addAction(act_about)
 
-    # ══════════════════════════════════════════════════════════════
     #  UI BUILDER
-    # ══════════════════════════════════════════════════════════════
     def _build_ui(self):
         central = QWidget()
         central.setObjectName("centralWidget")
@@ -125,7 +121,7 @@ class MainWindow(QMainWindow):
         lay.addStretch()
         return bar
 
-    # ── Stat Cards ───────────────────────────────────────────────
+    # Stat Cards
     def _build_stat_cards(self) -> QWidget:
         wrapper = QFrame()
         wrapper.setStyleSheet("QFrame { background-color: #0f0f1a; border-bottom: 1px solid #1e1e35; }")
@@ -173,7 +169,7 @@ class MainWindow(QMainWindow):
 
         return wrapper
 
-    # ── Toolbar (Add / Edit / Delete + Search) ───────────────────
+    # Toolbar (Add / Edit / Delete + Search)
     def _build_toolbar(self) -> QWidget:
         bar = QFrame()
         bar.setStyleSheet("QFrame { background-color: #0f0f1a; }")
@@ -214,7 +210,7 @@ class MainWindow(QMainWindow):
         lay.addWidget(self._search)
         return bar
 
-    # ── Filter Pills ─────────────────────────────────────────────
+    # Filter Pills
     def _build_filter_bar(self) -> QWidget:
         bar = QFrame()
         bar.setStyleSheet("QFrame { background-color: #0d0d1c; border-bottom: 1px solid #1e1e35; }")
@@ -268,7 +264,7 @@ class MainWindow(QMainWindow):
         btn.setFixedHeight(28)
         return btn
 
-    # ── Table ─────────────────────────────────────────────────────
+    # Table
     def _build_table(self) -> QWidget:
         self._table = QTableWidget()
         self._table.setColumnCount(7)
@@ -290,9 +286,7 @@ class MainWindow(QMainWindow):
         self._table.doubleClicked.connect(self._edit_task)
         return self._table
 
-    # ══════════════════════════════════════════════════════════════
     #  CRUD ACTIONS
-    # ══════════════════════════════════════════════════════════════
     def _add_task(self):
         dlg = TaskDialog(self, controller=self.ctrl)
         if dlg.exec():
@@ -345,9 +339,7 @@ class MainWindow(QMainWindow):
             self._refresh()
             self._show_status("🗑  Semua task Done telah dihapus.", 3000)
 
-    # ══════════════════════════════════════════════════════════════
     #  FILTER / SEARCH
-    # ══════════════════════════════════════════════════════════════
     def _on_search(self, text: str):
         self._search_text = text
         self._apply_filter()
@@ -378,10 +370,8 @@ class MainWindow(QMainWindow):
             priority=priority
         )
         self._load_table(tasks)
-
-    # ══════════════════════════════════════════════════════════════
+        
     #  TABLE POPULATION
-    # ══════════════════════════════════════════════════════════════
     def _refresh(self):
         self._apply_filter()
         self._update_stats()
@@ -412,10 +402,10 @@ class MainWindow(QMainWindow):
         self._show_status(
             f"  Menampilkan {count} task"
             + (f" dari filter '{self._active_status}' / '{self._active_priority}'" if
-               self._active_status != "Semua" or self._active_priority != "Semua" else "")
+            self._active_status != "Semua" or self._active_priority != "Semua" else "")
         )
 
-    # ── Cell helpers ─────────────────────────────────────────────
+    # Cell helpers
     def _set_cell(self, row, col, text, align=Qt.AlignVCenter | Qt.AlignLeft, color: str = None):
         item = QTableWidgetItem(text)
         item.setTextAlignment(align)
@@ -465,9 +455,7 @@ class MainWindow(QMainWindow):
         }
         return tints.get(priority, QColor(0, 0, 0, 0))
 
-    # ══════════════════════════════════════════════════════════════
     #  STATS
-    # ══════════════════════════════════════════════════════════════
     def _update_stats(self):
         stats = self.ctrl.get_stats()
         mapping = {
@@ -481,9 +469,7 @@ class MainWindow(QMainWindow):
             if key in self._stat_labels:
                 self._stat_labels[key].setText(val)
 
-    # ══════════════════════════════════════════════════════════════
     #  MISC
-    # ══════════════════════════════════════════════════════════════
     def _on_selection(self):
         has_sel = len(self._table.selectedItems()) > 0
         self._update_action_buttons(has_sel)
@@ -502,12 +488,12 @@ class MainWindow(QMainWindow):
             <p>Aplikasi manajemen tugas berbasis PySide6 dengan antarmuka modern.</p>
             <hr>
             <table>
-              <tr><td><b>Nama&nbsp;&nbsp;</b></td><td>: {NAMA}</td></tr>
-              <tr><td><b>NIM</b></td><td>: {NIM}</td></tr>
-              <tr><td><b>Framework</b></td><td>: PySide6 + SQLite</td></tr>
-              <tr><td><b>Versi</b></td><td>: 1.0.0</td></tr>
+                <tr><td><b>Nama&nbsp;&nbsp;</b></td><td>: {NAMA}</td></tr>
+                <tr><td><b>NIM</b></td><td>: {NIM}</td></tr>
+                <tr><td><b>Framework</b></td><td>: PySide6 + SQLite</td></tr>
+                <tr><td><b>Versi</b></td><td>: 1.0.0</td></tr>
             </table>
             <p style='color:#7c7c9e; font-size:11px; margin-top:10px;'>
-              Mini Project Pemrograman Visual — 2025
+                Mini Project Pemrograman Visual — 2026
             </p>"""
         )

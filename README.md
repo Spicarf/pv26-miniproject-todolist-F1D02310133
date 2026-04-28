@@ -1,4 +1,4 @@
-# 📋 Task Manager Pro
+# Task Manager Pro
 
 Aplikasi manajemen tugas berbasis **PySide6** dengan tampilan modern dark theme, integrasi **SQLite**, dan arsitektur **Separation of Concerns**.
 
@@ -14,18 +14,18 @@ Aplikasi manajemen tugas berbasis **PySide6** dengan tampilan modern dark theme,
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-- ✅ **CRUD Lengkap** — Tambah, edit, hapus task dengan konfirmasi dialog
-- 🎨 **Stat Cards** — Ringkasan Total / Done / In Progress / Todo / High Priority
-- 🔍 **Search + Filter Pills** — Filter by status & prioritas secara real-time
-- 📅 **Deteksi Overdue** — Due date merah otomatis jika terlewat
-- 🗂 **Kategori Task** — General, Work, Personal, Study, Health, dll.
-- 🌙 **Dark Theme Modern** — Styling QSS dari file eksternal
+- **CRUD Lengkap** — Tambah, edit, hapus task dengan konfirmasi dialog
+- **Stat Cards** — Ringkasan Total / Done / In Progress / Todo / High Priority
+- **Search + Filter Pills** — Filter by status & prioritas secara real-time
+- **Deteksi Overdue** — Due date merah otomatis jika terlewat
+- **Kategori Task** — General, Work, Personal, Study, Health, dll.
+- **Dark Theme Modern** — Styling QSS dari file eksternal
 
 ---
 
-## 📁 Struktur Project (SoC)
+## Struktur Project (SoC)
 
 ```
 task_manager/
@@ -44,7 +44,7 @@ task_manager/
 
 ---
 
-## 🗃 Schema Database
+## Schema Database
 
 Tabel `tasks` — 8 kolom:
 
@@ -61,7 +61,7 @@ Tabel `tasks` — 8 kolom:
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ```bash
 # 1. Install dependency
@@ -75,7 +75,7 @@ python main.py
 
 ---
 
-## 🛠 Teknologi
+## Teknologi
 
 - **Python 3.10+**
 - **PySide6** — GUI Framework

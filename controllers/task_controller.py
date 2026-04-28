@@ -16,7 +16,7 @@ class TaskController:
     def __init__(self):
         self.db = DatabaseManager()
 
-    # ── CRUD ────────────────────────────────────────────────────
+    # CRUD
     def add(self, data: dict) -> int:
         self._validate(data)
         return self.db.create_task(data)
@@ -31,7 +31,7 @@ class TaskController:
     def delete_done_tasks(self):
         self.db.delete_all_done()
 
-    # ── Query ────────────────────────────────────────────────────
+    # Query
     def get_all(self) -> list[dict]:
         return self.db.get_all_tasks()
 
@@ -47,7 +47,7 @@ class TaskController:
         merged = list(dict.fromkeys(self.CATEGORIES + db_cats))
         return merged
 
-    # ── Validasi ─────────────────────────────────────────────────
+    # Validasi
     @staticmethod
     def _validate(data: dict):
         if not data.get("title", "").strip():

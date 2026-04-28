@@ -17,7 +17,7 @@ class DatabaseManager:
         self.db_path = db_path
         self._init_database()
 
-    # ── Inisialisasi ────────────────────────────────────────────
+    # Inisialisasi
     def _init_database(self):
         """Membuat tabel jika belum ada."""
         with self._connect() as conn:
@@ -40,7 +40,7 @@ class DatabaseManager:
         conn.row_factory = sqlite3.Row   # akses kolom by name
         return conn
 
-    # ── CREATE ──────────────────────────────────────────────────
+    # CREATE
     def create_task(self, data: dict) -> int:
         """Menambahkan task baru. Mengembalikan id baris yang baru."""
         sql = """
@@ -54,7 +54,7 @@ class DatabaseManager:
             conn.commit()
             return cur.lastrowid
 
-    # ── READ ─────────────────────────────────────────────────────
+    # READ
     def get_all_tasks(self) -> list[dict]:
         """Mengembalikan semua task diurutkan by priority lalu due_date."""
         priority_order = "CASE priority WHEN 'High' THEN 1 WHEN 'Medium' THEN 2 ELSE 3 END"
@@ -104,7 +104,7 @@ class DatabaseManager:
             rows = conn.execute("SELECT DISTINCT category FROM tasks ORDER BY category").fetchall()
         return [r[0] for r in rows]
 
-    # ── UPDATE ───────────────────────────────────────────────────
+    # UPDATE
     def update_task(self, task_id: int, data: dict):
         sql = """
             UPDATE tasks
@@ -117,7 +117,7 @@ class DatabaseManager:
             conn.execute(sql, data)
             conn.commit()
 
-    # ── DELETE ───────────────────────────────────────────────────
+    # DELETE
     def delete_task(self, task_id: int):
         with self._connect() as conn:
             conn.execute("DELETE FROM tasks WHERE id=?", (task_id,))

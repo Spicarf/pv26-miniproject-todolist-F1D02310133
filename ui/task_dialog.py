@@ -17,12 +17,12 @@ from controllers.task_controller import TaskController
 class TaskDialog(QDialog):
     """
     Dialog input task dengan 6 field:
-      1. Judul
-      2. Kategori
-      3. Prioritas
-      4. Status
-      5. Due Date
-      6. Deskripsi
+    1. Judul
+    2. Kategori
+    3. Prioritas
+    4. Status
+    5. Due Date
+    6. Deskripsi
     """
 
     def __init__(self, parent=None, task_data: dict = None, controller: TaskController = None):
@@ -39,13 +39,13 @@ class TaskDialog(QDialog):
         if task_data:
             self._populate(task_data)
 
-    # ── UI ───────────────────────────────────────────────────────
+    # UI
     def _build_ui(self):
         root = QVBoxLayout(self)
         root.setSpacing(0)
         root.setContentsMargins(0, 0, 0, 0)
 
-        # ── Header strip
+        # Header strip
         header = QFrame()
         header.setFixedHeight(52)
         header.setStyleSheet(
@@ -59,7 +59,7 @@ class TaskDialog(QDialog):
         h_lay.addWidget(title_lbl)
         root.addWidget(header)
 
-        # ── Form body
+        # Form body
         body = QFrame()
         body_lay = QVBoxLayout(body)
         body_lay.setContentsMargins(24, 20, 24, 8)
@@ -113,7 +113,7 @@ class TaskDialog(QDialog):
         body_lay.addLayout(form)
         root.addWidget(body)
 
-        # ── Footer Buttons
+        # Footer Buttons
         footer = QFrame()
         footer.setStyleSheet("QFrame { background-color: #13132a; border-top: 1px solid #2d2d55; }")
         f_lay = QHBoxLayout(footer)
@@ -137,7 +137,7 @@ class TaskDialog(QDialog):
 
         self._update_priority_color(self.f_priority.currentText())
 
-    # ── Helpers ──────────────────────────────────────────────────
+    # Helpers
     def _populate(self, data: dict):
         self.f_title.setText(data.get("title", ""))
         self.f_category.setCurrentText(data.get("category", "General"))
@@ -163,7 +163,7 @@ class TaskDialog(QDialog):
             return
         self.accept()
 
-    # ── Public ───────────────────────────────────────────────────
+    # Public
     def get_data(self) -> dict:
         return {
             "title":       self.f_title.text().strip(),
