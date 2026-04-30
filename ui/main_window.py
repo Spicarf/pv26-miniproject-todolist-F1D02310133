@@ -17,7 +17,7 @@ from PySide6.QtGui import QColor, QFont, QIcon, QAction
 from controllers.task_controller import TaskController
 from ui.task_dialog import TaskDialog
 
-# ── Identitas Mahasiswa ──────────────────────────────────────────
+# Identitas Mahasiswa
 NAMA = "Raffi Fatthoni"
 NIM  = "F1D02310133"
 
@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
     def _build_menu(self):
         bar = self.menuBar()
 
-        # ── Menu File
+        # Menu File
         m_file = bar.addMenu("File")
 
         act_new = QAction("➕  Tambah Task", self)
@@ -68,7 +68,7 @@ class MainWindow(QMainWindow):
         act_exit.triggered.connect(self.close)
         m_file.addAction(act_exit)
 
-        # ── Menu Tentang Aplikasi  ← WAJIB sesuai spesifikasi
+        # Menu Tentang Aplikasi  ← WAJIB sesuai spesifikasi
         m_about = bar.addMenu("Tentang Aplikasi")
         act_about = QAction("ℹ️  Tentang Task Manager Pro", self)
         act_about.triggered.connect(self._show_about)
@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
         self._status_bar = QStatusBar()
         self.setStatusBar(self._status_bar)
 
-    # ── Header ──────────────────────────────────────────────────
+    # Header
     def _build_header(self) -> QWidget:
         bar = QFrame()
         bar.setObjectName("headerBar")

@@ -1,9 +1,9 @@
-/* ============================================================
-   Task Manager Pro — Global Stylesheet
-   Tema: Dark Indigo Modern
-   ============================================================ */
+/*
+    Task Manager Pro — Global Stylesheet
+    Tema: Dark Indigo Modern
+*/
 
-/* ── Root / Window ─────────────────────────────────────────── */
+/* Root / Window*/
 QMainWindow, QWidget#centralWidget {
     background-color: #0f0f1a;
     color: #e0e0f0;
@@ -11,7 +11,7 @@ QMainWindow, QWidget#centralWidget {
     font-size: 13px;
 }
 
-/* ── Header / Identity Bar ──────────────────────────────────── */
+/* Header / Identity Bar*/
 QWidget#headerBar {
     background-color: #1a1a2e;
     border-bottom: 2px solid #2d2d55;
@@ -30,7 +30,7 @@ QLabel#identityLabel {
     font-style: italic;
 }
 
-/* ── Stat Cards ─────────────────────────────────────────────── */
+/* Stat Cards*/
 QFrame#statCard {
     background-color: #1a1a2e;
     border: 1px solid #2d2d55;
@@ -56,7 +56,7 @@ QLabel#statNumberProg   { color: #60a5fa; }
 QLabel#statNumberTodo   { color: #f59e0b; }
 QLabel#statNumberHigh   { color: #f87171; }
 
-/* ── Toolbar Buttons ────────────────────────────────────────── */
+/* Toolbar Buttons*/
 QPushButton#btnAdd {
     background-color: #7c3aed;
     color: white;
@@ -93,7 +93,7 @@ QPushButton#btnDelete:hover   { background-color: #dc2626; color: white; }
 QPushButton#btnDelete:pressed { background-color: #b91c1c; }
 QPushButton#btnDelete:disabled { background-color: #1a1a2e; color: #3d3d5c; border-color: #2d2d55; }
 
-/* ── Filter Pills ────────────────────────────────────────────── */
+/* Filter Pills*/
 QPushButton#filterBtn {
     background-color: #1a1a2e;
     color: #7c7c9e;
@@ -110,7 +110,7 @@ QPushButton#filterBtn[active="true"] {
     font-weight: bold;
 }
 
-/* ── Search Box ─────────────────────────────────────────────── */
+/* Search Box*/
 QLineEdit#searchBox {
     background-color: #1a1a2e;
     border: 1px solid #2d2d55;
@@ -125,7 +125,7 @@ QLineEdit#searchBox:focus {
     background-color: #1e1e35;
 }
 
-/* ── Table ──────────────────────────────────────────────────── */
+/* Table*/
 QTableWidget {
     background-color: transparent;
     border: none;
@@ -155,7 +155,7 @@ QHeaderView::section {
     font-weight: bold;
 }
 
-/* ── Dialog ─────────────────────────────────────────────────── */
+/* Dialog */
 QDialog {
     background-color: #13132a;
     color: #e0e0f0;
@@ -215,7 +215,7 @@ QDateEdit::down-arrow {
     margin-right: 6px;
 }
 
-/* ── Dialog Buttons ──────────────────────────────────────────── */
+/* Dialog Buttons*/
 QPushButton#btnSave {
     background-color: #7c3aed;
     color: white;
@@ -240,7 +240,7 @@ QPushButton#btnCancel {
 }
 QPushButton#btnCancel:hover { background-color: #1e1e35; color: #a0a0c0; }
 
-/* ── Menu Bar ────────────────────────────────────────────────── */
+/* Menu Bar──*/
 QMenuBar {
     background-color: #1a1a2e;
     color: #a0a0c0;
@@ -258,7 +258,7 @@ QMenu {
 QMenu::item { padding: 6px 20px; border-radius: 4px; }
 QMenu::item:selected { background-color: #7c3aed; color: white; }
 
-/* ── Status Bar ──────────────────────────────────────────────── */
+/* Status Bar*/
 QStatusBar {
     background-color: #1a1a2e;
     color: #6b6b8e;
@@ -267,7 +267,7 @@ QStatusBar {
     padding: 3px 8px;
 }
 
-/* ── Scrollbars ──────────────────────────────────────────────── */
+/* Scrollbars*/
 QScrollBar:vertical {
     background: #0f0f1a;
     width: 8px;
@@ -282,7 +282,7 @@ QScrollBar::handle:vertical {
 QScrollBar::handle:vertical:hover { background: #7c3aed; }
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 
-/* ── Calendar Popup ──────────────────────────────────────────── */
+/* Calendar Popup*/
 QCalendarWidget { background-color: #1a1a2e; color: #e0e0f0; }
 QCalendarWidget QAbstractItemView {
     background-color: #1a1a2e;
@@ -291,7 +291,7 @@ QCalendarWidget QAbstractItemView {
 }
 QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #13132a; }
 
-/* ── Message Box ─────────────────────────────────────────────── */
+/* Message Box*/
 QMessageBox {
     background-color: #13132a;
     color: #e0e0f0;
@@ -306,7 +306,7 @@ QMessageBox QPushButton {
 }
 QMessageBox QPushButton:hover { background-color: #6d28d9; }
 
-/* ── Tooltip ─────────────────────────────────────────────────── */
+/* Tooltip */
 QToolTip {
     background-color: #2d2d55;
     color: #e0e0f0;

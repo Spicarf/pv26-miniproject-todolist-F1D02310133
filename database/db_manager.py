@@ -42,7 +42,6 @@ class DatabaseManager:
 
     # CREATE
     def create_task(self, data: dict) -> int:
-        """Menambahkan task baru. Mengembalikan id baris yang baru."""
         sql = """
             INSERT INTO tasks (title, category, priority, status, due_date, description, created_at)
             VALUES (:title, :category, :priority, :status, :due_date, :description, :created_at)
